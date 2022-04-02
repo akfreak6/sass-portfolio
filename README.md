@@ -2,4 +2,4 @@
 Portolio made using SASS
 
 
-[LINK](https://akfreak6.github.io/sass-portfolio/)
+[LINK](https://akfreak6.github.io/sass-portfolio/dist)
