@@ -3,68 +3,309 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AkashBernard Dabhi - Software Engineer with 7+ years of experience building full-stack web applications">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../scss/main.css">
-    <title>Akash Port</title>
+    <title>AkashBernard Dabhi - Software Engineer</title>
 </head>
 
 <body>
-    <header>
+
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <a href="#hero" class="navbar-logo">akash<span>.</span></a>
+        <ul class="navbar-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <a href="Akash Resume Light2.pdf" download class="navbar-resume-btn">
+            <i class="fas fa-download"></i> Resume
+        </a>
         <div class="menu-btn">
             <span class="menu-btn-burger"></span>
         </div>
-        <nav class="nav">
-            <ul class="menu-nav">
-                <li class="menu-nav-item active">
-                    <a href="index.html" class="menu-nav-link">
-                        Home
-                    </a>
-                </li>
-                <li class="menu-nav-item">
-                    <a href="about.html" class="menu-nav-link">
-                        About Me
-                    </a>
-                </li>
-                <li class="menu-nav-item">
-                    <a href="projects.html" class="menu-nav-link">
-                        My projects
-                    </a>
-                </li>
-                <li class="menu-nav-item">
-                    <a href="contact.html" class="menu-nav-link">
-                        Contact Me
-                    </a>
-                </li>
-            </ul>
-        </nav>
-    </header>
+    </nav>
 
-    <main>
-        <section class="home">
-            <h2>Hi! My name is</h2>
-            <h1 class="home-name">
-                Akash <span class="home-name-last">Dabhi</span>
-            </h1>
-            <h2>Web Dev</h2>
+    <!-- Mobile Nav -->
+    <div class="mobile-nav" id="mobileNav">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+        <a href="Akash Resume Light2.pdf" download class="mobile-resume-btn">
+            <i class="fas fa-download"></i> Download Resume
+        </a>
+    </div>
 
-            <div class="social-icons">
-                <a href="#!">
-                    <i class="fab fa-twitter fa-2x"></i>
-                </a>
-                <a href="#!">
-                    <i class="fab fa-facebook fa-2x"></i>
-                </a>
-                <a href="#!">
-                    <i class="fab fa-instagram fa-2x"></i>
-                </a>
-                <a href="#!">
-                    <i class="fab fa-github fa-2x"></i>
+    <!-- Hero -->
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <span class="hero-greeting">Hello, I'm</span>
+            <h1 class="hero-name">AkashBernard <span>Dabhi</span></h1>
+            <p class="hero-title">Software Engineer with 7+ years of experience building full-stack web applications, from pixel-perfect interfaces to backend integrations and APIs</p>
+            <div class="hero-cta">
+                <a href="#projects" class="hero-btn hero-btn--primary">View My Work</a>
+                <a href="Akash Resume Light2.pdf" download class="hero-btn hero-btn--outline">
+                    <i class="fas fa-download"></i> Download Resume
                 </a>
             </div>
-            <footer>&copy; Copyright 2024</footer>
-        </section>
-    </main>
+            <div class="hero-socials">
+                <a href="https://github.com/akfreak6" target="_blank" rel="noopener noreferrer" aria-label="Personal GitHub" title="Personal GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://github.com/akash-dabhi-qed" target="_blank" rel="noopener noreferrer" aria-label="Work GitHub" title="Work GitHub">
+                    <i class="fas fa-briefcase"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/akash-d-a6209786/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="mailto:akashbernard@hotmail.com" aria-label="Email" title="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section class="about" id="about">
+        <div class="section-header">
+            <h2>About <span>Me</span></h2>
+            <p>Frontend-leaning full stack engineer delivering end-to-end web solutions across diverse projects.</p>
+        </div>
+        <div class="about-grid">
+            <div class="about-info">
+                <h3>Who I Am</h3>
+                <p>I'm a software engineer with over 7 years of experience building end-to-end web applications. While my core strength lies in crafting polished, accessible interfaces with React.js, Next.js, and Tailwind CSS, I bring hands-on backend experience with Drupal, REST APIs, Next.js API routes, and headless CMS integrations -- enabling me to own features from UI to API.</p>
+                <div class="about-info-details">
+                    <div class="about-info-item">
+                        <span>Location</span>
+                        <strong>Palanpur, India</strong>
+                    </div>
+                    <div class="about-info-item">
+                        <span>Email</span>
+                        <strong>akashbernard@hotmail.com</strong>
+                    </div>
+                    <div class="about-info-item">
+                        <span>Phone</span>
+                        <strong>+91 96871 48696</strong>
+                    </div>
+                    <div class="about-info-item">
+                        <span>Experience</span>
+                        <strong>7+ Years</strong>
+                    </div>
+                </div>
+            </div>
+            <div class="about-skills">
+                <h3>Technical Skills</h3>
+                <div class="skills-category">
+                    <div class="skills-category-label">Frontend</div>
+                    <div class="skills-category-tags">
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">TypeScript</span>
+                        <span class="skill-tag">Next.js</span>
+                        <span class="skill-tag">React.js</span>
+                        <span class="skill-tag">React Native</span>
+                        <span class="skill-tag">Angular</span>
+                        <span class="skill-tag">GraphQL</span>
+                        <span class="skill-tag">Bootstrap</span>
+                    </div>
+                </div>
+                <div class="skills-category">
+                    <div class="skills-category-label">Backend & APIs</div>
+                    <div class="skills-category-tags">
+                        <span class="skill-tag">Next.js API Routes</span>
+                        <span class="skill-tag">PHP</span>
+                        <span class="skill-tag">Drupal</span>
+                        <span class="skill-tag">Strapi</span>
+                        <span class="skill-tag">REST APIs</span>
+                    </div>
+                </div>
+                <div class="skills-category">
+                    <div class="skills-category-label">Styling</div>
+                    <div class="skills-category-tags">
+                        <span class="skill-tag">Tailwind CSS</span>
+                        <span class="skill-tag">Sass / SCSS</span>
+                    </div>
+                </div>
+                <div class="skills-category">
+                    <div class="skills-category-label">Email Development</div>
+                    <div class="skills-category-tags">
+                        <span class="skill-tag">Maizzle</span>
+                        <span class="skill-tag">Email on Acid</span>
+                        <span class="skill-tag">Litmus</span>
+                    </div>
+                </div>
+                <div class="skills-category">
+                    <div class="skills-category-label">Tools & Platforms</div>
+                    <div class="skills-category-tags">
+                        <span class="skill-tag">Git</span>
+                        <span class="skill-tag">Docker</span>
+                        <span class="skill-tag">Figma</span>
+                        <span class="skill-tag">Canva</span>
+                        <span class="skill-tag">Gulp</span>
+                        <span class="skill-tag">Netcore</span>
+                        <span class="skill-tag">CleverTap</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section class="projects" id="projects">
+        <div class="section-header">
+            <h2>My <span>Projects</span></h2>
+            <p>End-to-end work spanning frontend interfaces, backend integrations, APIs, and AI.</p>
+        </div>
+        <div class="projects-grid">
+            <a href="https://www.banyanliving.com/" target="_blank" rel="noopener noreferrer" class="projects-card">
+                <span class="projects-card-year">2025 - Present</span>
+                <div class="projects-card-company">QED42</div>
+                <h3>Banyan Living</h3>
+                <p>Luxury residential booking platform (Airbnb-like) for properties across Thailand. Built property cards, long-term stays filtering with API integration, and responsive layouts end-to-end.</p>
+                <span class="projects-card-link">Visit Site <i class="fas fa-arrow-right"></i></span>
+            </a>
+            <a href="https://www.laaha.org/en/home" target="_blank" rel="noopener noreferrer" class="projects-card">
+                <span class="projects-card-year">2025 - Present</span>
+                <div class="projects-card-company">QED42</div>
+                <h3>United Nations Laaha Project</h3>
+                <p>Built reusable UI components, integrated Drupal REST APIs for content delivery, and implemented user-specific article bookmarking with persistent backend storage and personalized retrieval.</p>
+                <span class="projects-card-link">Visit Site <i class="fas fa-arrow-right"></i></span>
+            </a>
+            <div class="projects-card">
+                <span class="projects-card-year">2025</span>
+                <div class="projects-card-company">QED42</div>
+                <h3>AI-Powered RAG Chatbot for Apple Repairs</h3>
+                <p>Built end-to-end using semantic search, Streamlit, ChromaDB vector database, and Groq LLM APIs -- featuring dynamic prompting, safety guardrails, and structured JSON responses.</p>
+            </div>
+            <a href="https://www.learningcabinet.org/" target="_blank" rel="noopener noreferrer" class="projects-card">
+                <span class="projects-card-year">2024</span>
+                <div class="projects-card-company">QED42</div>
+                <h3>United Nations Learning Cabinet</h3>
+                <p>Developed major UI components integrated with Drupal backend, using Next.js, TypeScript and Tailwind. Focused on theming, accessibility, and performance -- boosting Lighthouse scores to 80+.</p>
+                <span class="projects-card-link">Visit Site <i class="fas fa-arrow-right"></i></span>
+            </a>
+            <div class="projects-card">
+                <span class="projects-card-year">2024</span>
+                <div class="projects-card-company">QED42</div>
+                <h3>Complaint & Feedback Platform</h3>
+                <p>Built a full-stack prototype using Next.js with offline-capable feedback submission, ticketing system, and backend data persistence.</p>
+            </div>
+            <div class="projects-card">
+                <span class="projects-card-year">2022 - 2024</span>
+                <div class="projects-card-company">QED42</div>
+                <h3>Kotak Securities Email Templates</h3>
+                <p>Developed responsive email templates and a drag-and-drop email builder using Maizzle, Next.js, and Strapi CMS as the headless backend.</p>
+            </div>
+            <div class="projects-card">
+                <span class="projects-card-year">2021</span>
+                <div class="projects-card-company">Digiconical</div>
+                <h3>Sardar Patel University - Social Media Content</h3>
+                <p>Led social media content creation for Sardar Patel University. Conceptualized and developed engaging content, including written pieces and graphic design elements.</p>
+            </div>
+            <div class="projects-card">
+                <span class="projects-card-year">2017 - 2021</span>
+                <div class="projects-card-company">Techthern IT Solution</div>
+                <h3>Food Delivery Web App</h3>
+                <p>Designed and developed a custom cart module to streamline adding and managing food selections for a food delivery web app using Angular 2.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience -->
+    <section class="experience" id="experience">
+        <div class="section-header">
+            <h2>Work <span>Experience</span></h2>
+        </div>
+        <div class="experience-timeline">
+            <div class="experience-item">
+                <div class="experience-item-period">March 2022 - Present</div>
+                <div class="experience-item-role">Engineer - UI</div>
+                <div class="experience-item-company">QED42</div>
+            </div>
+            <div class="experience-item">
+                <div class="experience-item-period">Jan 2021 - March 2022</div>
+                <div class="experience-item-role">Web Developer</div>
+                <div class="experience-item-company">Freelance</div>
+            </div>
+            <div class="experience-item">
+                <div class="experience-item-period">Jan 2021 - Dec 2021</div>
+                <div class="experience-item-role">Video Editor</div>
+                <div class="experience-item-company">Vidyamandir Trust</div>
+            </div>
+            <div class="experience-item">
+                <div class="experience-item-period">Feb 2021 - Oct 2021</div>
+                <div class="experience-item-role">Content Specialist</div>
+                <div class="experience-item-company">Digiconical</div>
+            </div>
+            <div class="experience-item">
+                <div class="experience-item-period">Dec 2017 - Jan 2021</div>
+                <div class="experience-item-role">User Interface Engineer</div>
+                <div class="experience-item-company">Techthern IT Solution</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact" id="contact">
+        <div class="section-header">
+            <h2>Get In <span>Touch</span></h2>
+            <p>Feel free to reach out for collaborations, opportunities, or just a friendly chat.</p>
+        </div>
+        <div class="contact-cards">
+            <a href="mailto:akashbernard@hotmail.com" class="contact-card">
+                <i class="fas fa-envelope"></i>
+                <span>Email</span>
+                <strong>akashbernard@hotmail.com</strong>
+            </a>
+            <a href="tel:+919687148696" class="contact-card">
+                <i class="fas fa-phone"></i>
+                <span>Phone</span>
+                <strong>+91 96871 48696</strong>
+            </a>
+            <a href="https://github.com/akfreak6" target="_blank" rel="noopener noreferrer" class="contact-card">
+                <i class="fab fa-github"></i>
+                <span>Personal GitHub</span>
+                <strong>akfreak6</strong>
+            </a>
+            <a href="https://github.com/akash-dabhi-qed" target="_blank" rel="noopener noreferrer" class="contact-card">
+                <i class="fas fa-briefcase"></i>
+                <span>Work GitHub</span>
+                <strong>akash-dabhi-qed</strong>
+            </a>
+        </div>
+        <div class="contact-resume">
+            <p>Want a copy of my resume?</p>
+            <a href="Akash Resume Light2.pdf" download>
+                <i class="fas fa-file-pdf"></i> Download Resume (PDF)
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-socials">
+            <a href="https://github.com/akfreak6" target="_blank" rel="noopener noreferrer" aria-label="Personal GitHub" title="Personal GitHub">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="https://github.com/akash-dabhi-qed" target="_blank" rel="noopener noreferrer" aria-label="Work GitHub" title="Work GitHub">
+                <i class="fas fa-briefcase"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/akash-d-a6209786/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="mailto:akashbernard@hotmail.com" aria-label="Email" title="Email">
+                <i class="fas fa-envelope"></i>
+            </a>
+        </div>
+        <p>&copy; 2026 AkashBernard Dabhi. All rights reserved.</p>
+    </footer>
+
     <script src="https://kit.fontawesome.com/dd7e4df5bd.js" crossorigin="anonymous"></script>
     <script src="js/main.js"></script>
 </body>

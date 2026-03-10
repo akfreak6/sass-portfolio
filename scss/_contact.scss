@@ -1,26 +1,137 @@
 .contact {
-  height: 100%;
-  padding-top: 40vh;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background: linear-gradient(
-      to right,
-      rgba($primary-color, 0.9),
-      rgba($primary-color, 0.3)
-    ),
-    url("../dist/img/model-1.jpg") center top;
-  background-size: cover;
+  padding: 6rem 2rem;
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
 
-  h2 {
-    font-size: 3rem;
-    margin-bottom: 2rem;
+  .section-header {
+    margin-bottom: 3rem;
+
+    h2 {
+      font-size: clamp(2rem, 4vw, 2.75rem);
+      font-weight: 700;
+      margin-bottom: 1rem;
+
+      span {
+        color: $secondary-color;
+      }
+    }
+
+    p {
+      color: $text-secondary;
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
   }
-  &-list {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-gap: 2rem;
-    font-size: 1.5rem;
+
+  &-cards {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 3rem;
+  }
+
+  &-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1.5rem 2rem;
+    background: $surface-light;
+    border: 1px solid $border-color;
+    border-radius: 12px;
+    text-decoration: none;
+    min-width: 180px;
+    @include transition-ease;
+
+    &:hover {
+      border-color: $secondary-color;
+      transform: translateY(-3px);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    i {
+      font-size: 1.5rem;
+      color: $secondary-color;
+    }
+
+    span {
+      font-size: 0.85rem;
+      color: $text-secondary;
+    }
+
+    strong {
+      font-size: 0.95rem;
+      color: $text-primary;
+      font-weight: 500;
+    }
+  }
+
+  &-resume {
+    margin-top: 2rem;
+
+    p {
+      color: $text-secondary;
+      margin-bottom: 1rem;
+      font-size: 0.95rem;
+    }
+
+    a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.875rem 2rem;
+      background: $secondary-color;
+      color: $primary-color;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none;
+      @include transition-ease;
+
+      &:hover {
+        background: lighten($secondary-color, 8%);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba($secondary-color, 0.3);
+      }
+    }
+  }
+}
+
+.footer {
+  padding: 2rem;
+  text-align: center;
+  border-top: 1px solid $border-color;
+  background: $surface-color;
+
+  &-socials {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 1px solid $border-color;
+      color: $text-secondary;
+      text-decoration: none;
+      @include transition-ease;
+
+      &:hover {
+        color: $secondary-color;
+        border-color: $secondary-color;
+      }
+    }
+  }
+
+  p {
+    font-size: 0.85rem;
+    color: $text-secondary;
   }
 }

@@ -1,92 +1,128 @@
 .projects {
-  padding-bottom: 2rem;
+  padding: 6rem 2rem;
+  background: $surface-color;
 
-  &-bio-image {
-    height: 30vh;
-    width: 100%;
-    background: linear-gradient(
-        to right,
-        rgba($primary-color, 0.9),
-        rgba($primary-color, 0.3)
-      ),
-      url("../dist/img/model-1.jpg") center top;
-    background-size: cover;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-end;
+  .section-header {
+    text-align: center;
+    margin-bottom: 4rem;
 
-    .text-secondary {
-      font-size: 2rem;
+    h2 {
+      font-size: clamp(2rem, 4vw, 2.75rem);
+      font-weight: 700;
+      margin-bottom: 1rem;
+
+      span {
+        color: $secondary-color;
+      }
+    }
+
+    p {
+      color: $text-secondary;
+      font-size: 1.05rem;
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.7;
     }
   }
 
-  &-items {
-    width: 60vw;
-    margin: 2rem auto 0 auto;
+  &-grid {
+    max-width: 1100px;
+    margin: 0 auto;
     display: grid;
-    grid-template-columns: 1fr;
-    grid-gap: 2rem;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+
+    @include respond-to(md) {
+      grid-template-columns: 1fr;
+    }
   }
 
-  &-item {
+  &-card {
+    display: block;
+    background: $surface-light;
+    border: 1px solid $border-color;
+    border-radius: 12px;
+    padding: 2rem;
+    text-decoration: none;
+    @include transition-ease;
     position: relative;
-    border-bottom: 5px solid $secondary-color;
     overflow: hidden;
-    cursor: pointer;
 
-    img {
-      width: 100%;
-    }
-    &::after {
+    &::before {
       content: "";
       position: absolute;
-      top: 100%;
+      top: 0;
       left: 0;
-      height: 100%;
       width: 100%;
+      height: 3px;
       background: $secondary-color;
-      opacity: 0;
+      transform: scaleX(0);
+      transform-origin: left;
       @include transition-ease;
     }
 
     &:hover {
-      &::after {
-        top: 0;
-        opacity: 0.9;
+      border-color: rgba($secondary-color, 0.3);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+
+      &::before {
+        transform: scaleX(1);
       }
-      .projects-btn {
-        opacity: 1;
+
+      .projects-card-link {
+        color: $secondary-color;
+        gap: 0.75rem;
       }
     }
-  }
 
-  &-btns {
-    position: absolute;
-    top: 0;
-    height: 100%;
-    width: 100%;
-    z-index: 1;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    align-items: center;
-    text-align: center;
-  }
-
-  &-btn {
-    opacity: 0;
-    color: set-text-color($secondary-color);
-    @include transition-ease;
-
-    &:hover {
-      color: set-text-color(set-text-color($secondary-color));
+    &-year {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: $secondary-color;
+      background: rgba($secondary-color, 0.1);
+      padding: 0.25rem 0.75rem;
+      border-radius: 100px;
+      margin-bottom: 1rem;
     }
-  }
-  .social-icons {
-    display: flex;
-    flex-direction: column;
-  }
-  footer {
-    transform: rotate(90deg) translate(-3rem, -5rem);
+
+    &-company {
+      font-size: 0.8rem;
+      color: $text-secondary;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 0.5rem;
+    }
+
+    h3 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: $text-primary;
+      margin-bottom: 0.75rem;
+      line-height: 1.4;
+    }
+
+    p {
+      color: $text-secondary;
+      font-size: 0.9rem;
+      line-height: 1.7;
+    }
+
+    &-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 1rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: $text-secondary;
+      @include transition-ease;
+
+      i {
+        font-size: 0.75rem;
+        @include transition-ease;
+      }
+    }
   }
 }
