@@ -1,14 +1,25 @@
-// Colors
-$primary-color: #0a0a0a;
-$secondary-color: #00d4aa;
-$surface-color: #141414;
-$surface-light: #1e1e1e;
-$text-primary: #f0f0f0;
-$text-secondary: #a0a0a0;
-$border-color: #2a2a2a;
+// Colors — monotone only
+// Contrast ratios on $bg #0a0a0a:
+//   $text       ~17:1   (AAA normal)
+//   $text-muted ~8.4:1  (AAA normal)
+//   $text-dim   ~5.7:1  (AA normal, AAA large)
+$bg: #0a0a0a;
+$surface: #111111;
+$text: #e8e8e8;
+$text-muted: #a8a8a8;
+$text-dim: #8a8a8a;
+$accent: #ffffff;
+$border: #2a2a2a;
+$white: #ffffff;
+
+// Type
+$font-body: "Sora", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+$font-mono: "JetBrains Mono", "SF Mono", "Fira Code", monospace;
 
 // Reset
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -16,39 +27,91 @@ $border-color: #2a2a2a;
 
 html {
   scroll-behavior: smooth;
+  font-size: 16px;
 }
 
-// Mixins
-@mixin transition-ease {
-  transition: all 0.3s ease;
+::selection {
+  background: $white;
+  color: $bg;
 }
 
-@mixin transition-smooth {
-  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+// Responsive
+$bp-sm: 480px;
+$bp-md: 768px;
+$bp-lg: 1024px;
+
+@mixin sm {
+  @media (max-width: $bp-sm) { @content; }
 }
 
-@function set-text-color($color) {
-  @if (lightness($color) > 40%) {
-    @return #000;
-  } @else {
-    @return #fff;
+@mixin md {
+  @media (max-width: $bp-md) { @content; }
+}
+
+@mixin lg {
+  @media (max-width: $bp-lg) { @content; }
+}
+
+// Reveal animation — only engages when JS adds .js-reveal, so a no-JS
+// or reduced-motion visitor sees content immediately.
+.js-reveal .reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+
+  &.visible {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-// Responsive breakpoints
-$breakpoint-sm: 480px;
-$breakpoint-md: 768px;
-$breakpoint-lg: 1024px;
-$breakpoint-xl: 1280px;
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
 
-@mixin respond-to($breakpoint) {
-  @if $breakpoint == sm {
-    @media (max-width: $breakpoint-sm) { @content; }
-  } @else if $breakpoint == md {
-    @media (max-width: $breakpoint-md) { @content; }
-  } @else if $breakpoint == lg {
-    @media (max-width: $breakpoint-lg) { @content; }
-  } @else if $breakpoint == xl {
-    @media (max-width: $breakpoint-xl) { @content; }
+  .js-reveal .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+// Focus styles — visible on every interactive element
+:focus {
+  outline: none;
+}
+
+:focus-visible {
+  outline: 2px solid $accent;
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+// Skip link — visually hidden until focused
+.skip-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0.75rem 1rem;
+  background: $accent;
+  color: $bg;
+  font-family: $font-mono;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transform: translateY(-110%);
+  transition: transform 0.2s ease;
+  z-index: 200;
+
+  &:focus {
+    transform: translateY(0);
   }
 }

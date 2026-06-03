@@ -7,29 +7,25 @@
 @import "contact";
 
 body {
-  background: $primary-color;
-  color: $text-primary;
-  font-family: "Sora", "Segoe UI", -apple-system, BlinkMacSystemFont, sans-serif;
+  background: $bg;
+  color: $text;
+  font-family: $font-body;
   line-height: 1.6;
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 h1, h2, h3, h4 {
-  font-weight: 600;
-  line-height: 1.2;
+  font-weight: 700;
+  line-height: 1.1;
 }
 
 a {
-  color: $text-primary;
+  color: $text;
   text-decoration: none;
 }
 
-// Scroll sections animation
-section {
-  position: relative;
-}
-
-// Smooth scroll offset for fixed navbar
 section[id] {
   scroll-margin-top: 80px;
 }

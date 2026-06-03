@@ -1,44 +1,62 @@
+// Mark JS as available so reveal animations engage (no-JS / no-CSS-support
+// users always see content immediately)
+document.documentElement.classList.add('js-reveal');
+
 // Mobile menu toggle
-const menuBtn = document.querySelector('.menu-btn');
-const hamburger = document.querySelector('.menu-btn-burger');
+const menuBtn = document.getElementById('menuBtn');
 const mobileNav = document.getElementById('mobileNav');
-let showMenu = false;
+let menuOpen = false;
 
-menuBtn.addEventListener('click', toggleMenu);
-
-function toggleMenu() {
-    showMenu = !showMenu;
-    hamburger.classList.toggle('open', showMenu);
-    mobileNav.classList.toggle('open', showMenu);
-    document.body.style.overflow = showMenu ? 'hidden' : '';
+function setMenu(open) {
+  menuOpen = open;
+  menuBtn.classList.toggle('open', open);
+  mobileNav.classList.toggle('open', open);
+  menuBtn.setAttribute('aria-expanded', String(open));
+  menuBtn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  mobileNav.setAttribute('aria-hidden', String(!open));
+  if (open) {
+    mobileNav.removeAttribute('inert');
+  } else {
+    mobileNav.setAttribute('inert', '');
+  }
+  document.body.style.overflow = open ? 'hidden' : '';
 }
 
-// Close mobile nav on link click
+menuBtn.addEventListener('click', () => {
+  setMenu(!menuOpen);
+});
+
 mobileNav.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-        if (showMenu) toggleMenu();
-    });
+  link.addEventListener('click', () => {
+    if (menuOpen) setMenu(false);
+  });
 });
 
-// Navbar scroll effect
-const navbar = document.getElementById('navbar');
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && menuOpen) {
+    setMenu(false);
+    menuBtn.focus();
+  }
+});
+
+// Navbar scroll
+const nav = document.getElementById('nav');
 window.addEventListener('scroll', () => {
-    navbar.classList.toggle('scrolled', window.scrollY > 50);
+  nav.classList.toggle('scrolled', window.scrollY > 50);
+}, { passive: true });
+
+// Reveal on scroll
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, {
+  threshold: 0.15,
+  rootMargin: '0px 0px -50px 0px'
 });
 
-// Active nav link on scroll
-const sections = document.querySelectorAll('section[id]');
-const navLinks = document.querySelectorAll('.navbar-links a');
-
-window.addEventListener('scroll', () => {
-    let current = '';
-    sections.forEach(section => {
-        const top = section.offsetTop - 100;
-        if (window.scrollY >= top) {
-            current = section.getAttribute('id');
-        }
-    });
-    navLinks.forEach(link => {
-        link.classList.toggle('active', link.getAttribute('href') === '#' + current);
-    });
-});
+reveals.forEach(el => observer.observe(el));
